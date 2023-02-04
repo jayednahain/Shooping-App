@@ -1,5 +1,9 @@
+//all product list
 import 'package:flutter/material.dart';
+//prduct model
 import '../model/productModel.dart';
+//single product item
+import '../widgets/productItem.dart';
 
 class ProductOverViewScreen extends StatelessWidget {
   ProductOverViewScreen({super.key});
@@ -46,13 +50,18 @@ class ProductOverViewScreen extends StatelessWidget {
         padding: const EdgeInsets.all(10),
         itemCount: loadedPorducts.length,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          //two column
           crossAxisCount:2,
           childAspectRatio: 3/2,
           crossAxisSpacing: 10,
           mainAxisSpacing: 10 
         ),
         //how the grid structure
-        itemBuilder:(ctx,i)=>Container()
+        itemBuilder:(ctx,i)=>ProductItem(
+          id: loadedPorducts[i].id,
+          title: loadedPorducts[i].title,
+          imageUrl: loadedPorducts[i].imageUrl,
+        )
         )
     );
   }

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+//product list
+import './screens/productOverViewScreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomePage(),
+      home: ProductOverViewScreen(),
     );
   }
 }
