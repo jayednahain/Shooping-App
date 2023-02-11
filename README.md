@@ -25,3 +25,5 @@
 - (//#2) - creating instance from a child (productGridView) , so that we can access provider
 - (//#3) - filter product from provider using product id
 - (//#4) - define a method on productProvider , which will filter product using product id .
+- (//#5) - in "of" method , set listen to false, we don want to rebuild the detail page
+-  
