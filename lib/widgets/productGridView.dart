@@ -5,7 +5,7 @@ import 'package:shopping_app/provider/productProvider.dart';
 //prduct model
 import '../model/productModel.dart';
 //single product item
-import '../widgets/productItem.dart';
+import 'productItem.dart';
 
 class ProductGridView extends StatelessWidget {
   @override
@@ -23,10 +23,13 @@ class ProductGridView extends StatelessWidget {
             crossAxisSpacing: 10,
             mainAxisSpacing: 10),
         //how the grid structure
-        itemBuilder: (ctx, i) => ProductItem(
-              id: productsList[i].id,
-              title: productsList[i].title,
-              imageUrl: productsList[i].imageUrl,
+        itemBuilder: (ctx, i) => ChangeNotifierProvider(
+              create: (context) => productsList[i],
+              child: ProductItem(
+                // id: productsList[i].id,
+                // title: productsList[i].title,
+                // imageUrl: productsList[i].imageUrl,
+              ),
             ));
   }
 }

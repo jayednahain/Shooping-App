@@ -5,7 +5,7 @@ import '../model/productModel.dart';
 //single product item
 import '../widgets/productItem.dart';
 //product GridView
-import './productGridView.dart';
+import '../widgets/productGridView.dart';
 
 class ProductOverViewScreen extends StatelessWidget {
   ProductOverViewScreen({super.key});

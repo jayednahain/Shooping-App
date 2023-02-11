@@ -16,8 +16,6 @@ class ProductDetailScreen extends StatelessWidget {
     //#4
     //#5
     final singleProduct = Provider.of<ProductProvider>(context,listen: false).findProductById(productID); 
-    
-
     return Scaffold(
       appBar: AppBar(
         title: Text(singleProduct.title.toString()),

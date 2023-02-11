@@ -26,4 +26,13 @@
 - (//#3) - filter product from provider using product id
 - (//#4) - define a method on productProvider , which will filter product using product id .
 - (//#5) - in "of" method , set listen to false, we don want to rebuild the detail page
--  
+
+## Favorite Button
+-  (//#6) Nested provider
+   - used for favorite product feature
+   - (//#6.1) extend product model with ChangeNotifier class
+- (//#7) - creating nested provider inside the old product list provider
+- (//#8) - product detail page creating object of that nested provider
+- (//#9) - add function which will update favorite status
+- 
+   
