@@ -3,7 +3,7 @@ import '../model/productModel.dart';
 
 class ProductProvider with ChangeNotifier {
   List<ProductModel> _privateAllItems = [
-     ProductModel(
+    ProductModel(
       id: 'p1',
       title: 'Red Shirt',
       description: 'A red shirt - it is pretty red!',
@@ -39,6 +39,11 @@ class ProductProvider with ChangeNotifier {
 
   List<ProductModel> get allItems {
     return [..._privateAllItems];
+  }
+
+  //#4
+  ProductModel findProductById(String id) {
+    return _privateAllItems.firstWhere((element) => element.id == id);
   }
 
   void addProduct() {
