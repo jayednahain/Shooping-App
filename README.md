@@ -17,6 +17,7 @@
 # provider
 ## productProvider.dart
     - data provider for product
+#
 
 # provider
 - (//#1) - provider initialize provider all the child widget can get provider data
@@ -43,3 +44,20 @@
 # provider using amount 2
 - (#provider_one) one - main.dart ( using builder method with ctx) 
 - (#provider_two) two - productGridVeiw.dart (ChangeNotifierProvider.value)
+
+# Using Consumer
+- when use Provider.of() method
+  - the whole build method will re-run when ever a single data changes
+  - when we want to run some sub part of the widget , we need consumer
+  - we just need to cover that particular sub part with the provider
+## 199
+- (#Consumer1.1)
+- the consumer only used to only rebuild parts of the widget tree instead of the entire widget
+- on productItem.dart we are using Provider.of<ProductModel>(context) to get products updates
+- widget that are only interested to update
+- consumer require builder
+  - (#Consumer1.1) consumer is generic type so we have to mention what type of data we are consuming . that is pretty much smiler as Provider.of()
+    - Consumer<ProductModel> it look for nearest provider of that type up in the widget tree
+  - builder takes 3 argument builder: (context, value, child)
+    - (value)= nearest instance of that type of data 
+    - (child)-

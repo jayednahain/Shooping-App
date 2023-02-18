@@ -15,38 +15,43 @@ class ProductItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // #8
-    final singleProduct = Provider.of<ProductModel>(context);
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(10),
-      child: GestureDetector(
-        onTap: () {
-          Navigator.of(context).pushNamed(ProductDetailScreen.routeName,
-              arguments: singleProduct.id);
-        },
-        child: GridTile(
-          header: Text("hellow"),
-          child: Image.network(singleProduct.imageUrl!, fit: BoxFit.cover),
-          footer: GridTileBar(
-            backgroundColor: Colors.black87,
-            leading: IconButton(
-              icon: Icon(
-                singleProduct.isFavorite
-                    ? Icons.favorite
-                    : Icons.favorite_border_outlined,
-                color: Theme.of(context).accentColor,
+    // final singleProduct = Provider.of<ProductModel>(context);
+    //#Consumer1.1
+    
+    return Consumer<ProductModel>(
+      builder: (context, singleProduct, child) => ClipRRect(
+        borderRadius: BorderRadius.circular(10),
+        child: GestureDetector(
+          onTap: () {
+            Navigator.of(context).pushNamed(ProductDetailScreen.routeName,
+                arguments: singleProduct.id);
+                },
+          child: GridTile(
+            header: Text("hellow"),
+            child: Image.network(singleProduct.imageUrl!, fit: BoxFit.cover),
+            footer: GridTileBar(
+              backgroundColor: Colors.black87,
+              leading: IconButton(
+                icon: Icon(
+                  singleProduct.isFavorite
+                      ? Icons.favorite
+                      : Icons.favorite_border_outlined,
+                  color: Theme.of(context).accentColor,
+                ),
+                onPressed: () {
+                  singleProduct.UpdateFavoriteStatus();
+                },
               ),
-              onPressed: () {
-                singleProduct.UpdateFavoriteStatus();
-              },
-            ),
-            title: Text(singleProduct.title!, textAlign: TextAlign.center),
-            trailing: IconButton(
-              icon: Icon(Icons.shopping_cart),
-              onPressed: () {},
+              title: Text(singleProduct.title!, textAlign: TextAlign.center),
+              trailing: IconButton(
+                icon: Icon(Icons.shopping_cart),
+                onPressed: () {},
+              ),
             ),
           ),
         ),
       ),
+      
     );
   }
 }
