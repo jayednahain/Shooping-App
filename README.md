@@ -72,4 +72,14 @@
 
 # #200
 - setup popupmenu (:) which will show only favorite items
-  - (#popupmenu_1.1)  
+  - (#popupmenu_1.1)
+  -   
+
+
+
+
+
+# Dart language Functions
+  - 200
+  - Enum
+  - (#enum_1.1) a away assigning labels to integer
