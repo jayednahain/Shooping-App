@@ -51,13 +51,18 @@
   - when we want to run some sub part of the widget , we need consumer
   - we just need to cover that particular sub part with the provider
 ## 199
-- (#Consumer1.1)
+## (#Consumer1.1)
 - the consumer only used to only rebuild parts of the widget tree instead of the entire widget
 - on productItem.dart we are using Provider.of<ProductModel>(context) to get products updates
 - widget that are only interested to update
 - consumer require builder
   - (#Consumer1.1) consumer is generic type so we have to mention what type of data we are consuming . that is pretty much smiler as Provider.of()
     - Consumer<ProductModel> it look for nearest provider of that type up in the widget tree
-  - builder takes 3 argument builder: (context, value, child)
-    - (value)= nearest instance of that type of data 
-    - (child)-
+    - builder takes 3 argument builder: (context, value, child)
+      - (value)= nearest instance of that type of data 
+      - (child)= if we have some part of inside consumer widget we dont want to rebuild.
+
+## 199
+## #Consumer1.2 
+  - using old Provider.of() and listener set to false
+  - cover the particular sub widget that will change 

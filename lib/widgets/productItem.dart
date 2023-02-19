@@ -12,26 +12,27 @@ class ProductItem extends StatelessWidget {
   // final String? imageUrl;
   // ProductItem({super.key, this.id, this.title, this.imageUrl});
 
+  //199
+   // (#Consumer1.1)
   @override
   Widget build(BuildContext context) {
     // #8
-    // final singleProduct = Provider.of<ProductModel>(context);
-    //#Consumer1.1
-    
-    return Consumer<ProductModel>(
-      builder: (context, singleProduct, child) => ClipRRect(
-        borderRadius: BorderRadius.circular(10),
-        child: GestureDetector(
-          onTap: () {
-            Navigator.of(context).pushNamed(ProductDetailScreen.routeName,
-                arguments: singleProduct.id);
-                },
-          child: GridTile(
-            header: Text("hellow"),
-            child: Image.network(singleProduct.imageUrl!, fit: BoxFit.cover),
-            footer: GridTileBar(
-              backgroundColor: Colors.black87,
-              leading: IconButton(
+    final singleProduct = Provider.of<ProductModel>(context,listen: false);
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(10),
+      child: GestureDetector(
+        onTap: () {
+          Navigator.of(context).pushNamed(ProductDetailScreen.routeName,
+              arguments: singleProduct.id);
+        },
+        child: GridTile(
+          header: Text("hellow"),
+          child: Image.network(singleProduct.imageUrl!, fit: BoxFit.cover),
+          footer: GridTileBar(
+            backgroundColor: Colors.black87,
+            // #Consumer1.2
+            leading: Consumer<ProductModel>(
+              builder: (context, singleProduct, child) => IconButton(
                 icon: Icon(
                   singleProduct.isFavorite
                       ? Icons.favorite
@@ -41,17 +42,16 @@ class ProductItem extends StatelessWidget {
                 onPressed: () {
                   singleProduct.UpdateFavoriteStatus();
                 },
-              ),
-              title: Text(singleProduct.title!, textAlign: TextAlign.center),
-              trailing: IconButton(
-                icon: Icon(Icons.shopping_cart),
-                onPressed: () {},
-              ),
+              ), 
+            ),
+            title: Text(singleProduct.title!, textAlign: TextAlign.center),
+            trailing: IconButton(
+              icon: Icon(Icons.shopping_cart),
+              onPressed: () {},
             ),
           ),
         ),
       ),
-      
     );
   }
 }
