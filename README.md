@@ -39,12 +39,15 @@
 ## different between .value and ctx ? 
 ### .value
 - provider works if the data changes for the widgets
+
+
 ### 197 198 199 ->
 
 # provider using amount 2
 - (#provider_one) one - main.dart ( using builder method with ctx) 
 - (#provider_two) two - productGridVeiw.dart (ChangeNotifierProvider.value)
 
+## 199
 # Using Consumer
 - when use Provider.of() method
   - the whole build method will re-run when ever a single data changes
@@ -66,3 +69,7 @@
 ## #Consumer1.2 
   - using old Provider.of() and listener set to false
   - cover the particular sub widget that will change 
+
+# #200
+- setup popupmenu (:) which will show only favorite items
+  - (#popupmenu_1.1)  
