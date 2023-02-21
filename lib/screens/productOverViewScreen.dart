@@ -12,13 +12,21 @@ import '../widgets/productGridView.dart';
 // #enum_1.1
 enum FilterOptions { Favorites, All }
 
-class ProductOverViewScreen extends StatelessWidget {
+class ProductOverViewScreen extends StatefulWidget {
   ProductOverViewScreen({super.key});
+
+  @override
+  State<ProductOverViewScreen> createState() => _ProductOverViewScreenState();
+}
+
+class _ProductOverViewScreenState extends State<ProductOverViewScreen> {
+  // #local_filter1.2
+  var _showOnlyFavorite = false;
+
   @override
   Widget build(BuildContext context) {
     // #global_filter_1.5
-    final productConainer =
-        Provider.of<ProductProvider>(context, listen: false);
+    // final productConainer = Provider.of<ProductProvider>(context, listen: false);
     return Scaffold(
         appBar: AppBar(
           // #popupmenu_1.1
@@ -26,13 +34,21 @@ class ProductOverViewScreen extends StatelessWidget {
             PopupMenuButton(
                 icon: Icon(Icons.more_vert),
                 onSelected: (FilterOptions selectedValue) {
-                  // print(selectedValue);
                   // global_filter_1.6
-                  if (selectedValue == FilterOptions.Favorites) {
-                    productConainer.showFavoritesOnly();
-                  } else {
-                    productConainer.showAll();
-                  }
+                  // productConainer.showFavoritesOnly();
+                  // productConainer.showAll();
+
+                  // #local_filter1.3
+                  // if (_showOnlyFavorite =!_showOnlyFavorite) {
+                    print("diff-- run");
+                    setState(() {
+                      if (selectedValue == FilterOptions.Favorites) {
+                        _showOnlyFavorite = true;
+                      } else {
+                        _showOnlyFavorite = false;
+                      }
+                    });
+                  // }
                 },
                 itemBuilder: (_) => [
                       PopupMenuItem(
@@ -43,6 +59,7 @@ class ProductOverViewScreen extends StatelessWidget {
                     ]),
           ],
         ),
-        body: ProductGridView());
+        // #local_filter1.4
+        body: ProductGridView(_showOnlyFavorite));
   }
 }

@@ -8,11 +8,18 @@ import '../model/productModel.dart';
 import 'productItem.dart';
 
 class ProductGridView extends StatelessWidget {
+  
+  // #local_filter1.5 
+  final showFav;
+  ProductGridView(this.showFav);
+
   @override
   Widget build(BuildContext context) {
     //#2 creating a instance of provider class
     final productData = Provider.of<ProductProvider>(context);
-    final productsList = productData.allItems;
+
+    // #local_filter1.6 showing data depending on argument
+    final productsList = showFav ? productData.favoriteItem : productData.allItems;
     return GridView.builder(
         padding: const EdgeInsets.all(10),
         itemCount: productsList.length,
@@ -31,9 +38,7 @@ class ProductGridView extends StatelessWidget {
         // #provider_two
         itemBuilder: (ctx, i) => ChangeNotifierProvider.value(
               value: productsList[i],
-              child: ProductItem(
-              ),
-            )
-          );
+              child: ProductItem(),
+            ));
   }
 }

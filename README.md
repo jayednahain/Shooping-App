@@ -85,7 +85,16 @@
     - (#global_filter_1.4) - showAll set flag flag
   - (#global_filter_1.5) - set an instance from root provider .
   - (#global_filter_1.6) - calling the functions from provider and control flag
-  -  
+
+## 201
+## filter product only for Single screen
+- (#local_filter1.1) - define function globally for favorite product
+- (#local_filter1.2) - define flag for filtering on widget
+- (#local_filter1.3) - change flag on using setState 
+- (#local_filter1.4) - sending flag on gridView widget as a argument
+- (#local_filter1.5) - receive the argument 
+- (#local_filter1.6) - showing data depending on argument
+
 # Dart language Functions
   - 201
   - Enum
