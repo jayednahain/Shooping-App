@@ -37,8 +37,28 @@ class ProductProvider with ChangeNotifier {
     )
   ];
 
+  // #global_filter_1.1
+  var _showFavoritesOnly = false;
+
   List<ProductModel> get allItems {
+    // #global_filter_1.2
+    if (_showFavoritesOnly) {
+      return _privateAllItems.where((item) => item.isFavorite).toList();
+    }
     return [..._privateAllItems];
+  }
+
+  // #global_filter_1.3
+  void showFavoritesOnly() {
+    _showFavoritesOnly = true;
+    
+    notifyListeners();
+  }
+
+  // #global_filter_1.4
+  void showAll() {
+    _showFavoritesOnly = false;
+    notifyListeners();
   }
 
   //#4

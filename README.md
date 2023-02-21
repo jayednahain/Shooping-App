@@ -70,16 +70,28 @@
   - using old Provider.of() and listener set to false
   - cover the particular sub widget that will change 
 
-# #200
+# #201
 - setup popupmenu (:) which will show only favorite items
-  - (#popupmenu_1.1)
-  -   
+  - (#popupmenu_1.1)   
 
-
-
-
-
+## 201 
+## Global filter product
+# if we want to filter product item globally
+- if we had a another part of this app which also show our product
+  - (#global_filter_1.1) - showFavoritesOnly will default set to false
+  - (#global_filter_1.2) - filter on all product function
+  - using these functions we will filter product from a widget 
+    - (#global_filter_1.3) - showFavoritesOnly function will set the flag true
+    - (#global_filter_1.4) - showAll set flag flag
+  - (#global_filter_1.5) - set an instance from root provider .
+  - (#global_filter_1.6) - calling the functions from provider and control flag
+  -  
 # Dart language Functions
-  - 200
+  - 201
   - Enum
   - (#enum_1.1) a away assigning labels to integer
+
+# Provider Feature
+- notifyListeners() notify all the listeners which all are interested to rebuild
+- 
+
