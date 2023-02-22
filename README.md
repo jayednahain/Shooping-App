@@ -95,10 +95,29 @@
 - (#local_filter1.5) - receive the argument 
 - (#local_filter1.6) - showing data depending on argument
 
+# 202
+## chart Functionality
+- (#chart1.1) - define cart single item model
+
+- cart provider
+- (#chart1.2) - define provider model for cart
+  - (#chart1.3) - map every cart item to the id of the product it belongs to
+  - (#chart1.4) - add item to cart  
+  - (#chart1.5) - if the item already inside the cart we just increase the quantity
+  - (#chart1.5) - if the cart dont have that item
+
+
 # Dart language Functions
   - 201
   - Enum
   - (#enum_1.1) a away assigning labels to integer
+  
+  - containsKey()
+  - https://www.educative.io/answers/what-is-the-mapcontainskey-method-in-dart 
+  - 
+  - putIfAbsent()
+  - https://www.educative.io/answers/what-is-mapputifabsent-in-dart 
+  - 
 
 # Provider Feature
 - notifyListeners() notify all the listeners which all are interested to rebuild
