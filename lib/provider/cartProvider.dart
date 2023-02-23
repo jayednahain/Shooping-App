@@ -27,7 +27,7 @@ class cartProvider with ChangeNotifier {
               price: price)
             );
     } else {
-       //#chart1.6 // if the cart dont have that item
+       //#chart1.6
       _allCartItems!.putIfAbsent(
           productId,
           () => CartItemModel(

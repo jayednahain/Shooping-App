@@ -98,13 +98,23 @@
 # 202
 ## chart Functionality
 - (#chart1.1) - define cart single item model
-
-- cart provider
+- cart provider and model setup
 - (#chart1.2) - define provider model for cart
   - (#chart1.3) - map every cart item to the id of the product it belongs to
   - (#chart1.4) - add item to cart  
   - (#chart1.5) - if the item already inside the cart we just increase the quantity
-  - (#chart1.5) - if the cart dont have that item
+  - (#chart1.6) - if the cart dont have that item
+  - 
+- two provider case
+  - currently we are just using product provider from root widget
+  - we want to use cart information in different screen 
+  - so we need to define cart provider from root label
+  
+- multiple provider setup
+  - (#chart1.7) - setup multi provider
+  - (#chart1.8) - define cart provider
+- cart icon on product overview screen
+  - 
 
 
 # Dart language Functions
