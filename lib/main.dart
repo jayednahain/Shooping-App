@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (ctx)=>ProductProvider()),
         // #chart1.8
-        ChangeNotifierProvider(create: (ctx)=>cartProvider()),
+        ChangeNotifierProvider(create: (ctx)=>CartProvider()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

@@ -109,12 +109,22 @@
   - currently we are just using product provider from root widget
   - we want to use cart information in different screen 
   - so we need to define cart provider from root label
-  
-- multiple provider setup
+- 203
+- multiple provider setup 203
   - (#chart1.7) - setup multi provider
   - (#chart1.8) - define cart provider
-- cart icon on product overview screen
-  - 
+- 
+- set cart on single product UI widget click (update cart list)
+  - (#chart1.9) - set up instance for cart provider and set it false , if the cart changes this widget will not rebuild , i just telling cart i added a new item , so this changes will not effect on ui 
+  - (#chart1.10) - using add item function from cart provider
+- setup cart icon on navbar so that we notice total cart item and navigate to cart screen
+  -  (#chart1.10) - using add item function from cart provider
+  -  (#chart1.11) - custom badge widget will show the cart section
+  -  (#chart1.12) - will return how many item are inside the cart
+  -  (#chart1.13) - cart provider instance in product overView Screen , so we can show total cart amount on navbar 
+  -  (#chart1.14) - using consumer for update only update the amount
+  -  (#chart1.15) - 
+  -  
 
 
 # Dart language Functions

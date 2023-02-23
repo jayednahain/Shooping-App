@@ -1,6 +1,7 @@
 //all product list
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:shopping_app/provider/cartProvider.dart';
 import 'package:shopping_app/provider/productProvider.dart';
 //prduct model
 import '../model/productModel.dart';
@@ -8,6 +9,8 @@ import '../model/productModel.dart';
 import '../widgets/productItem.dart';
 //product GridView
 import '../widgets/productGridView.dart';
+//import cart badge
+import '../widgets/badge.dart';
 
 // #enum_1.1
 enum FilterOptions { Favorites, All }
@@ -27,6 +30,8 @@ class _ProductOverViewScreenState extends State<ProductOverViewScreen> {
   Widget build(BuildContext context) {
     // #global_filter_1.5
     // final productConainer = Provider.of<ProductProvider>(context, listen: false);
+
+    final cart = Provider.of<CartProvider>(context);
     return Scaffold(
         appBar: AppBar(
           // #popupmenu_1.1
@@ -40,14 +45,14 @@ class _ProductOverViewScreenState extends State<ProductOverViewScreen> {
 
                   // #local_filter1.3
                   // if (_showOnlyFavorite =!_showOnlyFavorite) {
-                    print("diff-- run");
-                    setState(() {
-                      if (selectedValue == FilterOptions.Favorites) {
-                        _showOnlyFavorite = true;
-                      } else {
-                        _showOnlyFavorite = false;
-                      }
-                    });
+                  print("diff-- run");
+                  setState(() {
+                    if (selectedValue == FilterOptions.Favorites) {
+                      _showOnlyFavorite = true;
+                    } else {
+                      _showOnlyFavorite = false;
+                    }
+                  });
                   // }
                 },
                 itemBuilder: (_) => [
@@ -57,9 +62,24 @@ class _ProductOverViewScreenState extends State<ProductOverViewScreen> {
                       PopupMenuItem(
                           child: Text("show All"), value: FilterOptions.All)
                     ]),
+
+            // #chart1.14
+            Consumer<CartProvider>(
+              // #chart1.11
+              builder:(_,cart,ch)=>Badge(
+                child: ch,
+                value: cart.cartItemCount.toString()),
+              // #chart1.15  
+              child:IconButton(
+                  icon: Icon(Icons.shopping_cart),
+                  onPressed: () {},
+                ) ,  
+            )
           ],
         ),
         // #local_filter1.4
         body: ProductGridView(_showOnlyFavorite));
   }
 }
+
+

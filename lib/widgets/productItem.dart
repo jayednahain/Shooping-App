@@ -3,7 +3,9 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:provider/provider.dart';
+import 'package:shopping_app/model/chartModel.dart';
 import 'package:shopping_app/model/productModel.dart';
+import 'package:shopping_app/provider/cartProvider.dart';
 import 'package:shopping_app/screens/productDetailScreen.dart';
 
 class ProductItem extends StatelessWidget {
@@ -13,11 +15,14 @@ class ProductItem extends StatelessWidget {
   // ProductItem({super.key, this.id, this.title, this.imageUrl});
 
   //199
-   // (#Consumer1.1)
+  // (#Consumer1.1)
   @override
   Widget build(BuildContext context) {
     // #8
-    final singleProduct = Provider.of<ProductModel>(context,listen: false);
+    final singleProduct = Provider.of<ProductModel>(context, listen: false);
+    // #chart1.9
+    final cart = Provider.of<CartProvider>(context, listen: false);
+
     return ClipRRect(
       borderRadius: BorderRadius.circular(10),
       child: GestureDetector(
@@ -42,12 +47,19 @@ class ProductItem extends StatelessWidget {
                 onPressed: () {
                   singleProduct.UpdateFavoriteStatus();
                 },
-              ), 
+              ),
             ),
             title: Text(singleProduct.title!, textAlign: TextAlign.center),
             trailing: IconButton(
               icon: Icon(Icons.shopping_cart),
-              onPressed: () {},
+              onPressed: () {
+                //(#chart1.10)
+                cart.addItem(
+                  singleProduct.id!,
+                  singleProduct.price!,
+                  singleProduct.title!
+                );
+              },
             ),
           ),
         ),

@@ -3,32 +3,34 @@ import '../model/chartModel.dart';
 
 //#chart1.2
 
-class cartProvider with ChangeNotifier {
+class CartProvider with ChangeNotifier {
   //#chart1.3
-  Map<String, CartItemModel>? _allCartItems;
+  Map<String, CartItemModel> _allCartItems = {};
 
   //#chart1.3
   Map<String, CartItemModel> get allCartItems {
-    return {..._allCartItems!};
+    return {..._allCartItems};
   }
 
-   //#chart1.4 // add product to cart
+  // #chart1.12
+  int get cartItemCount {
+    return _allCartItems.length;
+  }
+
+  //#chart1.4 // add product to cart
   void addItem(String productId, double price, String title) {
-
-
-     //#chart1.5
-    if (_allCartItems!.containsKey(productId)) {
-      _allCartItems!.update(
+    //#chart1.5
+    if (_allCartItems.containsKey(productId)) {
+      _allCartItems.update(
           productId,
           (existingCartItem) => CartItemModel(
               id: existingCartItem.id,
-              title: existingCartItem.title, 
-              quantity: existingCartItem.quantity! + 1, 
-              price: price)
-            );
+              title: existingCartItem.title,
+              quantity: existingCartItem.quantity! + 1,
+              price: price));
     } else {
-       //#chart1.6
-      _allCartItems!.putIfAbsent(
+      //#chart1.6
+      _allCartItems.putIfAbsent(
           productId,
           () => CartItemModel(
               id: DateTime.now().toString(),
@@ -36,5 +38,6 @@ class cartProvider with ChangeNotifier {
               quantity: 1,
               price: price));
     }
+    notifyListeners();
   }
 }
