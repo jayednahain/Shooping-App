@@ -3,6 +3,8 @@
     - Just showing productGrid view
 ## productDetailScreen.dart
     - product detail screen
+## cartScreen.dart
+    - showing all cart item
 
 # widgets
 ## productGridView.dart
@@ -123,8 +125,15 @@
   -  (#chart1.12) - will return how many item are inside the cart
   -  (#chart1.13) - cart provider instance in product overView Screen , so we can show total cart amount on navbar 
   -  (#chart1.14) - using consumer for update only update the amount
-  -  (#chart1.15) - 
   -  
+- all cart item showing on separate screen by clicking on cart icon in navigation 
+  - (#chart1.15) - created screen
+  - (#chart1.16) - create widget for showing single cart item
+  - (#chart1.17) - this function will calculate total amount for each card. if we increase the single product amount,
+    - (#chart1.17.1) - create instance of provider 
+    - (#chart1.17.2) - showing the total amount though instance
+  - (#chart1.18) - define on root main widget for name route navigation
+  - (#chart1.19) - define navigation on press on navbar cart icon
 
 
 # Dart language Functions

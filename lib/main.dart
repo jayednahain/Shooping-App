@@ -9,6 +9,8 @@ import './screens/productOverViewScreen.dart';
 import './provider/productProvider.dart';
 // cart provider
 import './provider/cartProvider.dart';
+//cart screen
+import './screens/cartScreen.dart';
 
 
 void main() {
@@ -37,7 +39,9 @@ class MyApp extends StatelessWidget {
           accentColor:Colors.orange),
         home: ProductOverViewScreen(),
         routes: {
-          ProductDetailScreen.routeName:(context) => ProductDetailScreen()
+          ProductDetailScreen.routeName:(context) => ProductDetailScreen(),
+          // #chart1.18
+          CartScreen.routeName:(context) =>CartScreen()
         },
       ),
     );

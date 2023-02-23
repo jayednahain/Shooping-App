@@ -1,8 +1,11 @@
 //all product list
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shopping_app/provider/cartProvider.dart';
 import 'package:shopping_app/provider/productProvider.dart';
+import 'package:shopping_app/screens/cartScreen.dart';
 //prduct model
 import '../model/productModel.dart';
 //single product item
@@ -11,6 +14,8 @@ import '../widgets/productItem.dart';
 import '../widgets/productGridView.dart';
 //import cart badge
 import '../widgets/badge.dart';
+// cart screen
+import '../screens/cartScreen.dart';
 
 // #enum_1.1
 enum FilterOptions { Favorites, All }
@@ -66,14 +71,16 @@ class _ProductOverViewScreenState extends State<ProductOverViewScreen> {
             // #chart1.14
             Consumer<CartProvider>(
               // #chart1.11
-              builder:(_,cart,ch)=>Badge(
-                child: ch,
-                value: cart.cartItemCount.toString()),
-              // #chart1.15  
-              child:IconButton(
-                  icon: Icon(Icons.shopping_cart),
-                  onPressed: () {},
-                ) ,  
+              builder: (_, cart, ch) =>
+                  Badge(child: ch, value: cart.cartItemCount.toString()),
+              // #chart1.15
+              child: IconButton(
+                icon: Icon(Icons.shopping_cart),
+                onPressed: () {
+                  //# chart1.19
+                  Navigator.of(context).pushNamed(CartScreen.routeName);
+                },
+              ),
             )
           ],
         ),
@@ -81,5 +88,3 @@ class _ProductOverViewScreenState extends State<ProductOverViewScreen> {
         body: ProductGridView(_showOnlyFavorite));
   }
 }
-
-
