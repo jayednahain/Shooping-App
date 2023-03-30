@@ -1,10 +1,12 @@
-
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:shopping_app/provider/cartProvider.dart';
+
 
 
 
 // #chart1.16
+// (#chart1.21)
 class CartItem extends StatelessWidget {
 
   final String? productId;
@@ -23,10 +25,12 @@ class CartItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // print("--------------------------card id: ${id}");
+    //(#chart1.23)
+    final cart = Provider.of<CartProvider>(context);
     return Dismissible(
       onDismissed: (direction){
-        // Provider.of<>(context,listen: false).removeItem(productId);
+        //(#chart1.24)
+        cart.removeItem(productId!);
       },
       direction: DismissDirection.endToStart,
       background:Padding(
@@ -50,8 +54,8 @@ class CartItem extends StatelessWidget {
           leading: CircleAvatar(
             child: Text("${price}"),
           ),
-          title: Text(""),
-          subtitle: Text('',
+          title: Text(title.toString()),
+          subtitle: Text("${price! * quantity!}",
             style:TextStyle(
                 fontSize:20,
                 fontWeight:FontWeight.bold ),),

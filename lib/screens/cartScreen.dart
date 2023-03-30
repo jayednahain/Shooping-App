@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shopping_app/provider/cartProvider.dart';
+import 'package:shopping_app/widgets/cartItem.dart';
 
 // #chart1.15
 class CartScreen extends StatelessWidget {
@@ -12,6 +13,10 @@ class CartScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     // #chart1.17.1
     final cart = Provider.of<CartProvider>(context);
+    //(#chart1.21.2)
+    final allCartItemsKeys = cart.allCartItems.keys.toList();
+    final allCartItem = cart.allCartItems.values.toList();
+    print("cart items: " + cart.cartItemCount.toString());
     return Scaffold(
       appBar: AppBar(
         title: Text('Cart Screen'),
@@ -25,13 +30,28 @@ class CartScreen extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text("Total",style: TextStyle(fontSize: 10)),
+                  Text("Total", style: TextStyle(fontSize: 10)),
                   // #chart1.17.1
                   Chip(label: Text(cart.totalAmount.toString())),
-                  TextButton(onPressed:() {}, child: Text("ORDER NOW"))
+                  TextButton(onPressed: () {}, child: Text("ORDER NOW"))
                 ],
               ),
             ),
+          ),
+          // (#chart1.20)
+          SizedBox(height: 10),
+          Expanded(
+              //(#chart1.21.1)
+              child: ListView.builder(
+                itemCount: cart.cartItemCount,
+                itemBuilder: (ctx, i) => CartItem(
+                  productId:allCartItemsKeys[i],
+                  id:allCartItem[i].id,
+                  price:allCartItem[i].price,
+                  quantity:allCartItem[i].quantity,
+                  title:allCartItem[i].title,
+                  )
+                )
           )
         ],
       ),

@@ -77,6 +77,7 @@
   - (#popupmenu_1.1)   
 
 ## 201 
+## filter functionality just for favorite items
 ## Global filter product
 # if we want to filter product item globally
 - if we had a another part of this app which also show our product
@@ -134,6 +135,14 @@
     - (#chart1.17.2) - showing the total amount though instance
   - (#chart1.18) - define on root main widget for name route navigation
   - (#chart1.19) - define navigation on press on navbar cart icon
+# 206 march 30/3/2022 and 207 cart list and cart remove functionality
+- (#chart1.20) - define widget for product list view
+- (#chart1.21) - single cart item with dismiss functionality
+  - (#chart1.21.1) - sending data to single cart item
+  - (#chart1.21.2) - getting all cart product and keys
+- (#chart1.22) - remove product function . function will run if any one swap product from cart list
+- (#chart1.23) - creating instance of class item provider
+- (#chart1.24) - calling removeItem function using instance.
 
 
 # Dart language Functions
