@@ -143,6 +143,10 @@
 - (#chart1.22) - remove product function . function will run if any one swap product from cart list
 - (#chart1.23) - creating instance of class item provider
 - (#chart1.24) - calling removeItem function using instance.
+# 208 product detail page
+- (#porduct_detail_page1.1) - showing single product on detail page
+- 
+
 
 
 # Dart language Functions
