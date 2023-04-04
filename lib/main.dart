@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_app/model/chartModel.dart';
+import 'package:shopping_app/provider/ordersProvider.dart';
 import 'package:shopping_app/screens/productDetailScreen.dart';
 import 'package:provider/provider.dart';
 
 //product list Screen
 import './screens/productOverViewScreen.dart';
+//cart screen
+import './screens/cartScreen.dart';
+
 //product provider
 import './provider/productProvider.dart';
 // cart provider
 import './provider/cartProvider.dart';
-//cart screen
-import './screens/cartScreen.dart';
-
+// order provider
 
 void main() {
   runApp(const MyApp());
@@ -31,6 +33,8 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (ctx)=>ProductProvider()),
         // #chart1.8
         ChangeNotifierProvider(create: (ctx)=>CartProvider()),
+        //product_order1.6
+        ChangeNotifierProvider(create: (ctx)=>OrdersProvider())
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

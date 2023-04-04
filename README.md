@@ -145,7 +145,12 @@
 - (#chart1.24) - calling removeItem function using instance.
 # 208 product detail page
 - (#porduct_detail_page1.1) - showing single product on detail page
-- 
+# 209 product order functionality
+- (product_order1.1) build order model
+- (product_order1.3) build order provider
+- (product_order1.4) define add order method on OrdersProvider
+- (product_order1.5) clear all items inside cart section
+- (product_order1.6) define Order provider on MultiProvider list on main.dart
 
 
 
