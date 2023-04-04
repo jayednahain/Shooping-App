@@ -151,7 +151,8 @@
 - (product_order1.4) define add order method on OrdersProvider
 - (product_order1.5) clear all items inside cart section
 - (product_order1.6) define Order provider on MultiProvider list on main.dart
-
+- (product_order1.7) accessing current chart list and amount using cart provider and sending to order provider
+- (product_order1.8) clear current cart list after pressing on order now button
 
 
 # Dart language Functions

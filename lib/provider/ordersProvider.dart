@@ -11,13 +11,13 @@ class OrdersProvider with ChangeNotifier {
   }
 
   //(product_order1.4)
-  void addOrder(List<CartItemModel> singleCartProduct, double total) {
+  void addOrder(List<CartItemModel> singleCartProducts, double total) {
     _allOrders.insert(
         0,
         OrderItemModel(
             id: DateTime.now().toString(),
             amount: total,
-            products: singleCartProduct,
+            products: singleCartProducts,
             dateTime: DateTime.now()));
     notifyListeners();
   }

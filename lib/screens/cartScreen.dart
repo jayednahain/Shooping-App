@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shopping_app/provider/cartProvider.dart';
+import 'package:shopping_app/provider/ordersProvider.dart';
 import 'package:shopping_app/widgets/cartItem.dart';
+import 'package:shopping_app/model/orderItemModel.dart';
 
 // #chart1.15
 class CartScreen extends StatelessWidget {
@@ -16,7 +18,7 @@ class CartScreen extends StatelessWidget {
     //(#chart1.21.2)
     final allCartItemsKeys = cart.allCartItems.keys.toList();
     final allCartItem = cart.allCartItems.values.toList();
-    print("cart items: " + cart.cartItemCount.toString());
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Cart Screen'),
@@ -33,7 +35,16 @@ class CartScreen extends StatelessWidget {
                   Text("Total", style: TextStyle(fontSize: 10)),
                   // #chart1.17.1
                   Chip(label: Text(cart.totalAmount.toString())),
-                  TextButton(onPressed: () {}, child: Text("ORDER NOW"))
+                  TextButton(
+                      onPressed: () {
+                        //(product_order1.7)
+                        Provider.of<OrdersProvider>(context, listen: false)
+                            .addOrder(cart.allCartItems.values.toList(),
+                                cart.totalAmount);
+                        //(product_order1.8)
+                        cart.clearCart();
+                      },
+                      child: Text("ORDER NOW"))
                 ],
               ),
             ),
@@ -43,16 +54,14 @@ class CartScreen extends StatelessWidget {
           Expanded(
               //(#chart1.21.1)
               child: ListView.builder(
-                itemCount: cart.cartItemCount,
-                itemBuilder: (ctx, i) => CartItem(
-                  productId:allCartItemsKeys[i],
-                  id:allCartItem[i].id,
-                  price:allCartItem[i].price,
-                  quantity:allCartItem[i].quantity,
-                  title:allCartItem[i].title,
-                  )
-                )
-          )
+                  itemCount: cart.cartItemCount,
+                  itemBuilder: (ctx, i) => CartItem(
+                        productId: allCartItemsKeys[i],
+                        id: allCartItem[i].id,
+                        price: allCartItem[i].price,
+                        quantity: allCartItem[i].quantity,
+                        title: allCartItem[i].title,
+                      )))
         ],
       ),
     );
