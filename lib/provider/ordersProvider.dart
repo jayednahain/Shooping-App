@@ -8,6 +8,7 @@ class OrdersProvider with ChangeNotifier {
 
   List<OrderItemModel> get allOrders {
     return [..._allOrders];
+    
   }
 
   //(product_order1.4)
