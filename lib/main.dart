@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_app/model/chartModel.dart';
 import 'package:shopping_app/provider/ordersProvider.dart';
-import 'package:shopping_app/screens/productDetailScreen.dart';
+
 import 'package:provider/provider.dart';
 
 //product list Screen
 import './screens/productOverViewScreen.dart';
-//cart screen
+// for routing
 import './screens/cartScreen.dart';
+import 'package:shopping_app/screens/productDetailScreen.dart';
+import './screens/productOrderScreen.dart';
+
+
 
 //product provider
 import './provider/productProvider.dart';
@@ -45,7 +49,9 @@ class MyApp extends StatelessWidget {
         routes: {
           ProductDetailScreen.routeName:(context) => ProductDetailScreen(),
           // #chart1.18
-          CartScreen.routeName:(context) =>CartScreen()
+          CartScreen.routeName:(context) =>CartScreen(),
+          // (#drawer1.1)
+          ProductOrderScreen.routeName:(context) =>ProductOrderScreen()
         },
       ),
     );

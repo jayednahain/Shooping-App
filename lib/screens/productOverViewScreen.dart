@@ -8,14 +8,15 @@ import 'package:shopping_app/provider/productProvider.dart';
 import 'package:shopping_app/screens/cartScreen.dart';
 //prduct model
 import '../model/productModel.dart';
-//single product item
-import '../widgets/productItem.dart';
-//product GridView
-import '../widgets/productGridView.dart';
-//import cart badge
-import '../widgets/badge.dart';
-// cart screen
+
+//screen
 import '../screens/cartScreen.dart';
+
+// widget
+import '../widgets/badge.dart';
+import '../widgets/productGridView.dart';
+import '../widgets/productItem.dart';
+import '../widgets/appDrawer.dart';
 
 // #enum_1.1
 enum FilterOptions { Favorites, All }
@@ -38,7 +39,8 @@ class _ProductOverViewScreenState extends State<ProductOverViewScreen> {
 
     final cart = Provider.of<CartProvider>(context);
     return Scaffold(
-        appBar: AppBar(
+      drawer: AppDrawer(),
+      appBar: AppBar(
           // #popupmenu_1.1
           actions: [
             PopupMenuButton(
