@@ -18,6 +18,8 @@ class CartScreen extends StatelessWidget {
     //(#chart1.21.2)
     final allCartItemsKeys = cart.allCartItems.keys.toList();
     final allCartItem = cart.allCartItems.values.toList();
+    //(product_order1.12) 
+    final order = Provider.of<OrdersProvider>(context, listen: false);
 
     return Scaffold(
       appBar: AppBar(
@@ -38,9 +40,8 @@ class CartScreen extends StatelessWidget {
                   TextButton(
                       onPressed: () {
                         //(product_order1.7)
-                        Provider.of<OrdersProvider>(context, listen: false)
-                            .addOrder(cart.allCartItems.values.toList(),
-                                cart.totalAmount);
+                        order.addOrder(cart.allCartItems.values.toList(),
+                        cart.totalAmount);
                         //(product_order1.8)
                         cart.clearCart();
                       },

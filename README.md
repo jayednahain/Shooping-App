@@ -151,7 +151,8 @@
 - (product_order1.4) define add order method on OrdersProvider
 - (product_order1.5) clear all items inside cart section
 - (product_order1.6) define Order provider on MultiProvider list on main.dart
-- (product_order1.7) accessing current chart list and amount using cart provider and sending to order provider
+- (product_order1.12) - define below! 
+- (product_order1.7) accessing current chart list and amount using cart provider and sending to order provider . after adding on product on cart . if we click on order now , current cart list items wll place on single order object . so here one order object will have multiple cart items
 # 210 order now button functionality
 - (product_order1.8) clear current cart list after pressing on order now button
 # 211 working on order page
@@ -159,6 +160,8 @@
 - (product_order1.10) - create widget for single order item
 - (product_order1.11) - initial order object with constructor // this widget will receive single order object
 - (product_order1.12) - sending single order object to OrderItem widget . getting the list from order provider
+- (product_order1.12) - create order instance for getting data from order provider , set listen: false , we do not want to listen any change if order change !
+- 
 - 
 
 # Dart language Functions
