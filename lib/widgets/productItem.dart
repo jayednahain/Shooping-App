@@ -53,11 +53,24 @@ class ProductItem extends StatelessWidget {
               icon: Icon(Icons.shopping_cart),
               onPressed: () {
                 //(#chart1.10)
-                cart.addItem(
-                  singleProduct.id!,
-                  singleProduct.price!,
-                  singleProduct.title!
-                );
+                cart.addItem(singleProduct.id!, singleProduct.price!,
+                    singleProduct.title!);
+                //(snacksBar1.1)
+                ScaffoldMessenger.of(context).hideCurrentSnackBar();
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                  margin: EdgeInsets.all(10),
+                  behavior: SnackBarBehavior.floating,
+                  // padding: EdgeInsets.symmetric(horizontal: 10,vertical: 4) ,
+                  content: Text('Added item to Chart'),
+                  duration: Duration(seconds: 2),
+                  //(snacksBar1.2)
+                  action: SnackBarAction(
+                    label: 'UNDO',
+                    onPressed: () {
+                      cart.removeSingleItem(singleProduct.id!);
+                    },
+                  ),
+                ));
               },
             ),
           ),

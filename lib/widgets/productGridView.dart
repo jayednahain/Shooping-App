@@ -29,12 +29,6 @@ class ProductGridView extends StatelessWidget {
             childAspectRatio: 3 / 2,
             crossAxisSpacing: 10,
             mainAxisSpacing: 10),
-        //how the grid structure
-        // itemBuilder: (ctx, i) => ChangeNotifierProvider(
-        //       create: (context) => productsList[i],
-        //       child: ProductItem(
-        //       ),
-        //    )
         // #provider_two
         itemBuilder: (ctx, i) => ChangeNotifierProvider.value(
               value: productsList[i],

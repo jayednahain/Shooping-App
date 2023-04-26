@@ -68,6 +68,10 @@
       - (child)= if we have some part of inside consumer widget we dont want to rebuild.
 
 ## 199
+this different between Consumer and  Provider.of() is 
+  - Provider.of() build the entire widget
+  - Consumer also re-run when the data changes , only re-run the builder function
+    - Consumer will nice if you want re-build a part of a widget tree
 ## #Consumer1.2 
   - using old Provider.of() and listener set to false
   - cover the particular sub widget that will change 
@@ -161,7 +165,7 @@
 - (product_order1.11) - initial order object with constructor // this widget will receive single order object
 - (product_order1.12) - sending single order object to OrderItem widget . getting the list from order provider
 - (product_order1.12) - create order instance for getting data from order provider , set listen: false , we do not want to listen any change if order change !
-## order item expand functionality  
+## order item expand the functionality  
 - (product_order1.13) - convert stateless to stateful widget order item
   -  this will help to expand order item card
 - (product_order1.14)(product_order1.14) - create a variable which will change state when expand button click
@@ -169,8 +173,23 @@
 # side drawer
 ## side drawer will help to navigate different screen
 - #drawer1.1 - create drawer widget
-- #drawer1.2 setting up route for product order screen
-- #drawer1.3 adding items to drawer
+- #drawer1.2 setting up a route for product order screen
+- #drawer1.3 Adding items to the drawer
+
+# 483
+Using a snacks bar when we add products to the cart
+- if we click on a single product.
+- that means we have to work on single-product widget
+- (snacksBar1.1) - Scaffold.of(context) Stablish a connection to nearest scaffold widget
+  - the current widget productItem.dart does not have an ant scaffold widget
+    - so the nearest scaffold is product ProductOverViewScreen
+      - Why Scaffold widget?
+        - because the scaffold controls the whole page
+- (snacksBar1.2) - define snack bar action what happens if we click undo on a snack bar
+- (snacksBar1.3) - create a method on cart provider for undo !
+  - this method will work for
+    - if the current product amount is 1 -> if will remove the entire product item from the cart
+    - if current product amount is more then 1 -> it will decrement the product amount
 
 
 # Dart language Functions
@@ -188,6 +207,14 @@
   - fix decimal point length
 
 # Provider Feature
-- notifyListeners() notify all the listeners which all are interested to rebuild
+- notifyListeners() notify all the listeners who all are interested to rebuild
 - 
-
+# Flutter
+- this different between the Consumer and  Provider.of() is 
+  - Provider.of() build the entire widget
+  - Consumer also re-run when the data changes , only re-run the builder function
+    - Consumer will nice if you want re-build a part of a widget tree
+- of()
+  -  of always takes context 
+  -  and stablish some kinds of connection behind the seen
+     -  connection to some globally manage object
