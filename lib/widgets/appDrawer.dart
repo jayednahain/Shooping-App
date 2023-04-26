@@ -2,6 +2,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
 import 'package:shopping_app/screens/productOrderScreen.dart';
 
+// #drawer1.1
 class AppDrawer extends StatelessWidget {
   const AppDrawer({super.key});
 
@@ -11,6 +12,7 @@ class AppDrawer extends StatelessWidget {
       child: Column(
         children: [
           AppBar(title: Text("hellow"), automaticallyImplyLeading: false),
+          //#drawer1.3
           Divider(),
           ListTile(
             leading: Icon(Icons.shop),
@@ -20,6 +22,7 @@ class AppDrawer extends StatelessWidget {
               Navigator.of(context).pushReplacementNamed('/');
             },
           ),
+          Divider(),
           ListTile(
             leading: Icon(Icons.payment),
             title: Text("Order"),

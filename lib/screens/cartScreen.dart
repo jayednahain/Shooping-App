@@ -36,7 +36,7 @@ class CartScreen extends StatelessWidget {
                 children: [
                   Text("Total", style: TextStyle(fontSize: 10)),
                   // #chart1.17.1
-                  Chip(label: Text(cart.totalAmount.toString())),
+                  Chip(label: Text(cart.totalAmount.toStringAsFixed(2))),
                   TextButton(
                       onPressed: () {
                         //(product_order1.7)

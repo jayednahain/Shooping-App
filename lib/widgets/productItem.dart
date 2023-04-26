@@ -31,7 +31,6 @@ class ProductItem extends StatelessWidget {
               arguments: singleProduct.id);
         },
         child: GridTile(
-          header: Text("hellow"),
           child: Image.network(singleProduct.imageUrl!, fit: BoxFit.cover),
           footer: GridTileBar(
             backgroundColor: Colors.black87,

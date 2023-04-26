@@ -161,10 +161,16 @@
 - (product_order1.11) - initial order object with constructor // this widget will receive single order object
 - (product_order1.12) - sending single order object to OrderItem widget . getting the list from order provider
 - (product_order1.12) - create order instance for getting data from order provider , set listen: false , we do not want to listen any change if order change !
+## order item expand functionality  
+- (product_order1.13) - convert stateless to stateful widget order item
+  -  this will help to expand order item card
+- (product_order1.14)(product_order1.14) - create a variable which will change state when expand button click
+- (product_order1.15) - showing single order item
 # side drawer
 ## side drawer will help to navigate different screen
-- #drawer1.1 setting up route for product order screen
-- 
+- #drawer1.1 - create drawer widget
+- #drawer1.2 setting up route for product order screen
+- #drawer1.3 adding items to drawer
 
 
 # Dart language Functions
@@ -177,7 +183,9 @@
   - 
   - putIfAbsent()
   - https://www.educative.io/answers/what-is-mapputifabsent-in-dart 
-  - 
+
+  - toStringAsFixed() 
+  - fix decimal point length
 
 # Provider Feature
 - notifyListeners() notify all the listeners which all are interested to rebuild
