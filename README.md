@@ -149,6 +149,7 @@ this different between Consumer and  Provider.of() is
 - (#chart1.24) - calling removeItem function using instance.
 # 208 product detail page
 - (#porduct_detail_page1.1) - showing single product on detail page
+#
 # 209 product order functionality
 - (product_order1.1) build order model
 - (product_order1.3) build order provider
@@ -167,37 +168,47 @@ this different between Consumer and  Provider.of() is
 - (product_order1.12) - create order instance for getting data from order provider , set listen: false , we do not want to listen any change if order change !
 ## order item expand the functionality  
 - (product_order1.13) - convert stateless to stateful widget order item
-  -  this will help to expand order item card
-- (product_order1.14)(product_order1.14) - create a variable which will change state when expand button click
+  -  this will help to expand the order item card
+- (product_order1.14)(product_order1.14) - create a variable that will change state when expand button click
 - (product_order1.15) - showing single order item
+#
 # side drawer
-## side drawer will help to navigate different screen
+## side drawer will help to navigate the different screen
 - #drawer1.1 - create drawer widget
-- #drawer1.2 setting up a route for product order screen
+- #drawer1.2 Setting up a route for product order screen
 - #drawer1.3 Adding items to the drawer
-
+#
 # 483 
 # snacks bar
 Using a snacks bar when we add products to the cart
 - if we click on a single product.
-- that means we have to work on single-product widget
+- that means we have to work on a single-product widget
 - (snacksBar1.1) - Scaffold.of(context) Stablish a connection to nearest scaffold widget
   - the current widget productItem.dart does not have an ant scaffold widget
     - so the nearest scaffold is product ProductOverViewScreen
       - Why Scaffold widget?
         - because the scaffold controls the whole page
 - (snacksBar1.2) - define snack bar action what happens if we click undo on a snack bar
-- (snacksBar1.3) - create a method on cart provider for undo !
+- (snacksBar1.3) - create a method on the cart provider for undo!
   - this method will work for
-    - if the current product amount is 1 -> if will remove the entire product item from the cart
-    - if current product amount is more then 1 -> it will decrement the product amount
+    - if the current product amount is 1 -> it will remove the entire product item from the cart
+    - if the current product amount is more than 1 -> it will decrement the product amount
 # 485
 # Alert Dialogs
-- showing alert dialog when we want to remove item from cart list
-- (alertDialog1.1) - showing alert dialog when we want to remove item from cart list.
-- 
-- 
+- showing alert dialog when we want to remove an item from the cart list
+- (alertDialog1.1) - showing alert dialog when we want to remove items from cart list.
 
+#
+# User product functionality
+## user can upload their own product
+### create update delete functionality
+- (userProduct1.1) - user product page created
+- (userProduct1.2) - setting up product model and provider
+- (userProduct1.3) - creating provider instance
+- (userProduct1.4) - create a common widget for showing a single product
+- (userProduct1.5) - set connection between product list screen and single product widget
+- (userProduct1.6) - setting up the route for the user product screen on main.dart
+- 
 # Dart language Functions
   - 201
   - Enum
