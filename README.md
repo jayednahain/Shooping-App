@@ -176,7 +176,8 @@ this different between Consumer and  Provider.of() is
 - #drawer1.2 setting up a route for product order screen
 - #drawer1.3 Adding items to the drawer
 
-# 483
+# 483 
+# snacks bar
 Using a snacks bar when we add products to the cart
 - if we click on a single product.
 - that means we have to work on single-product widget
@@ -190,7 +191,12 @@ Using a snacks bar when we add products to the cart
   - this method will work for
     - if the current product amount is 1 -> if will remove the entire product item from the cart
     - if current product amount is more then 1 -> it will decrement the product amount
-
+# 485
+# Alert Dialogs
+- showing alert dialog when we want to remove item from cart list
+- (alertDialog1.1) - showing alert dialog when we want to remove item from cart list.
+- 
+- 
 
 # Dart language Functions
   - 201
