@@ -208,7 +208,12 @@ Using a snacks bar when we add products to the cart
 - (userProduct1.4) - create a common widget for showing a single product
 - (userProduct1.5) - set connection between product list screen and single product widget
 - (userProduct1.6) - setting up the route for the user product screen on main.dart
+## edit product functionality
+- (editproduct1.1) from field screen created
+- (editproduct1.2) define route main.dart
+- (editproduct1.2) from widget
 - 
+
 # Dart language Functions
   - 201
   - Enum

@@ -3,6 +3,7 @@ import 'package:shopping_app/model/chartModel.dart';
 import 'package:shopping_app/provider/ordersProvider.dart';
 
 import 'package:provider/provider.dart';
+import 'package:shopping_app/screens/userEditProduct.dart';
 import 'package:shopping_app/screens/userProductScreen.dart';
 
 //product list Screen
@@ -54,9 +55,9 @@ class MyApp extends StatelessWidget {
           // (#drawer1.1)
           ProductOrderScreen.routeName:(context) =>ProductOrderScreen(),
           //userProduct1.6
-          UserProductScreen.routeName:(context) => UserProductScreen()
-          
-
+          UserProductScreen.routeName:(context) => UserProductScreen(),
+          //(editproduct1.2)
+          UserEditProduct.routeName:(context) => UserEditProduct()  
         },
       ),
     );
