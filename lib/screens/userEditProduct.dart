@@ -14,6 +14,15 @@ class UserEditProduct extends StatefulWidget {
 
 class _UserEditProductState extends State<UserEditProduct> {
   final _priceFocusNode = FocusNode();
+  final _descriptionFocusNode = FocusNode();
+
+  @override
+  // (editproduct1.6)
+  void dispose() {
+    _priceFocusNode.dispose();
+    _descriptionFocusNode.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +51,16 @@ class _UserEditProductState extends State<UserEditProduct> {
               inputFormatters: [FilteringTextInputFormatter.digitsOnly],
               //(editproduct1.6)
               focusNode: _priceFocusNode,
-            )
+              onFieldSubmitted: (_) {
+                FocusScope.of(context).requestFocus(_descriptionFocusNode);
+              },
+            ),
+            TextFormField(
+              decoration: InputDecoration(labelText: 'Description'),
+              maxLines: 3,
+              keyboardType: TextInputType.multiline,
+              focusNode: _descriptionFocusNode,
+            ),
           ],
         )),
       ),
