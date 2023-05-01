@@ -211,9 +211,13 @@ Using a snacks bar when we add products to the cart
 ## edit product functionality
 - (editproduct1.1) from field screen created
 - (editproduct1.2) define route main.dart
-- (editproduct1.2) from widget
-- 
-
+- (editproduct1.3) - from widget
+- (editproduct1.4) - define TextFormField
+- (editproduct1.5) - create focusNode variable
+### using focus node
+- with focus node we can switch text input field by clicking enter button 
+- (editproduct1.6) - adding foucsNode variable to next field (which will take price)
+- (editproduct1.7) - requesting focusNoe on submit (1st field title)
 # Dart language Functions
   - 201
   - Enum
