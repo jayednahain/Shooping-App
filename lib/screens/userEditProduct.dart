@@ -15,14 +15,19 @@ class UserEditProduct extends StatefulWidget {
 class _UserEditProductState extends State<UserEditProduct> {
   final _priceFocusNode = FocusNode();
   final _descriptionFocusNode = FocusNode();
+
+  //editproduct1.8
   final _imageUrlController =TextEditingController();
   final _imageUrlFocusNode = FocusNode();
 
   @override
   void initState() {
+    //editproduct1.11
     _imageUrlController.addListener(_updateImageUrl);
     super.initState();
   }
+
+  //editproduct1.10
   void _updateImageUrl(){
     if(!_imageUrlFocusNode.hasFocus){
       setState(() {});
@@ -102,6 +107,7 @@ class _UserEditProductState extends State<UserEditProduct> {
                     decoration: InputDecoration(labelText: "type image URl"),
                     keyboardType: TextInputType.url,
                     textInputAction: TextInputAction.done,
+                    //editproduct1.9
                     controller: _imageUrlController,
                     focusNode: _imageUrlFocusNode,
                   ),

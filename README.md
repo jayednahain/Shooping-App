@@ -221,7 +221,14 @@ Using a snacks bar when we add products to the cart
 - (editproduct1.6) - adding foucsNode variable to next field (which will take price)
 - (editproduct1.7) - requesting focused on submit (1st field title)
 
-
+### network image and text field functionality
+- (editproduct1.8) define two variable for image control
+  - one for focus and one for control
+- (editproduct1.9) adding variables on text field
+- (editproduct1.10) this function will check image text field has focus or not
+- (editproduct1.11) checking with initial state
+- (editproduct1.12) remove it while desposing
+#
 # Dart language Functions
   - 201
   - Enum
