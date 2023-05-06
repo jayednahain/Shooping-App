@@ -220,6 +220,8 @@ Using a snacks bar when we add products to the cart
 - with focus node we can switch text input field by clicking enter button 
 - (editproduct1.6) - adding foucsNode variable to next field (which will take price)
 - (editproduct1.7) - requesting focused on submit (1st field title)
+
+
 # Dart language Functions
   - 201
   - Enum

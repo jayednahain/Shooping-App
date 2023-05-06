@@ -1,5 +1,4 @@
 //all product list
-import 'dart:html';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -74,7 +73,7 @@ class _ProductOverViewScreenState extends State<ProductOverViewScreen> {
             Consumer<CartProvider>(
               // #chart1.11
               builder: (_, cart, ch) =>
-                  Badge(child: ch, value: cart.cartItemCount.toString()),
+                  BadgeOne(child: ch, value: cart.cartItemCount.toString()),
               // #chart1.15
               child: IconButton(
                 icon: Icon(Icons.shopping_cart),
